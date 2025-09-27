@@ -24,11 +24,16 @@ function App() {
       <ConnectionProvider endpoint={endpoint}>
         < WalletProvider wallets={[]} autoConnect>
           < WalletModalProvider>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <WalletMultiButton />
-              <WalletDisconnectButton />
+            <div className='min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center p-6'>
+              <header className='w-full max-w-2xl flex justify-between items-center mb-8'>
+                <WalletMultiButton className="bg-green-500 hover:bg-green-600 text-gray-100 font-semibold px-4 py-2 rounded-lg shadow-md transition" />
+                <WalletDisconnectButton className="bg-red-500 hover:bg-red-600 text-gray-100 font-semibold px-4 py-2 rounded-lg shadow-md transition" />
+              </header>
+              <main className="w-full max-w-md bg-gray-800 rounded-xl p-6 shadow-lg">
+                <h1 className="text-2xl font-bold text-green-400 mb-4 text-center">Solana Devnet Airdrop</h1>
+                <Airdrop />
+              </main>
             </div>
-            <Airdrop></Airdrop>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

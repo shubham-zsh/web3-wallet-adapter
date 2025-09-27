@@ -18,7 +18,12 @@ export function Airdrop() {
     return <div>
         <br />
         <br />
-        <input id="amount" type="text" placeholder="Amount"></ input>
-        <button className="" onClick={sendAirdropToUser}>Send Airdrop</button>
+        <input id="amount" type="text" placeholder="Amount" className="p-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"></ input>
+        <button className="bg-green-500 hover:bg-green-600 text-gray-100 font-semibold px-4 py-3 rounded-lg shadow-md transition"
+            onClick={sendAirdropToUser}>Send Airdrop</button>
+
+        {!wallet.connected && (
+            <p className="text-gray-400 text-sm text-center">Connect your wallet to send SOL</p>
+        )}
     </div >
 }
